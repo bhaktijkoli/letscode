@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Inria+Serif&display=swap');
+
+.code-editor {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Inria Serif", serif;
+}
+
+.jumbotron {
+  border-radius: 0px;
+}
+
+.custom-jumbotron {
+  text-align: center;
+  padding: 5%;
+  color: white;
+  background: url(https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.center-img {
+  display: block;
+  margin: 5px auto;
+}
+
+.center-img:hover {
+  padding: 2%;
+}
+
+img {
+  padding: 5%;
+}
