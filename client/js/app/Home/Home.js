@@ -16,28 +16,28 @@ class Home extends Component {
         <div className="container pgm-language">
           <div className="row">
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/c.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/c.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/cpp.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/cpp.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/java.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/java.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/python.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/python.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/php.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/php.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/ruby.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/ruby.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/javascript.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/javascript.svg" width="128" height="128" />
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="../icons/go.svg" width="128" height="128" /></a>
+              <img className="center-img" src="../icons/go.svg" width="128" height="128" />
             </div>
           </div>
         </div>

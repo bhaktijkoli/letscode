@@ -10992,4 +10992,9 @@ img {
   padding: 5%;
 }
 
+#c_editor {
+  width: 100% !important;
+  height: auto;
+}
+
 /*# sourceMappingURL=core.css.map */
