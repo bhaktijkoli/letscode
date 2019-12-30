@@ -16,28 +16,28 @@ class Home extends Component {
         <div className="container pgm-language">
           <div className="row">
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/1628/1628182.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/c.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/1628/1628181.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/cpp.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/226/226777.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/java.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/180/180867.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/python.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/528/528261.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/php.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/919/919842.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/ruby.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://image.flaticon.com/icons/png/512/919/919828.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/javascript.svg" width="128" height="128" /></a>
             </div>
             <div className="col-md-3 col-sm-4 col-6">
-              <a href="#"><img className="center-img" src="https://sdtimes.com/wp-content/uploads/2018/02/golang.sh_-490x490.png" width="128" height="128" /></a>
+              <a href="#"><img className="center-img" src="../icons/go.svg" width="128" height="128" /></a>
             </div>
           </div>
         </div>
