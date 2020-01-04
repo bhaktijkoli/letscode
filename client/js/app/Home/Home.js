@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 class Home extends Component {
   componentDidMount() {
     document.title = "Let's Code";
@@ -9,12 +9,12 @@ class Home extends Component {
     return (
       <Fragment>
         <header className='header-section'>
-          <a className='header-link header-link-1' href='#'>
+          <Link className='header-link header-link-1' to='/login'>
             Login
-          </a>
-          <a className='header-link header-link-2' href='#'>
+          </Link>
+          <Link className='header-link header-link-2' to='/signup'>
             Signup
-          </a>
+          </Link>
           <div className='header-textbox'>
             <h1 className='header-text'>&#60;Lets Code&#47;&#62;</h1>
             <p className='header-text-sub'>
