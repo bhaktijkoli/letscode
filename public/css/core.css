@@ -11213,6 +11213,17 @@ body {
   background-color: white;
 }
 
+.links {
+  color: #6e0b9c;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.links:hover {
+  color: #351046;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1030px) {
   .header-text {
     left: 30%;

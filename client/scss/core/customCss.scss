@@ -261,6 +261,17 @@ body {
   background-color: white;
 }
 
+.links {
+  color: rgb(110, 11, 156);
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.links:hover {
+  color: rgb(53, 16, 70);
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1030px) {
   .header-text {
     left: 30%;

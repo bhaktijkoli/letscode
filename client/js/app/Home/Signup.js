@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 class Signup extends Component {
   componentDidMount() {
     document.title = "Let's Code";
@@ -64,14 +64,10 @@ class Signup extends Component {
                         placeholder='Confirm Password'
                       />
                     </div>
-                    <div className='form-group form-check'>
-                      <input type='checkbox' className='form-check-input' />
-                      <label
-                        className='form-check-label label'
-                        for='exampleCheck1'
-                      >
-                        Remember Me
-                      </label>
+                    <div className='form-group '>
+                      <Link className='links' to='/login'>
+                        Already have an account?Log In
+                      </Link>
                     </div>
                     <button type='submit' className='btn-login'>
                       Submit
