@@ -5,8 +5,8 @@ import { withFirebase } from './Firebase';
 
 import Home from './Home/Home';
 import Editor from './Editor/Editor';
-import Login from './Home/Login';
-import Signup from './Home/Signup';
+import Login from './Login/Login';
+import Signup from './Signup/Signup';
 import Logout from './Logout/Logout';
 
 class Guest extends Component {
