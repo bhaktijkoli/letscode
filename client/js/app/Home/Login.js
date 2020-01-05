@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { FirebaseContext } from './../Firebase';
+
 class Login extends Component {
   componentDidMount() {
     document.title = "Let's Code";
@@ -11,7 +13,7 @@ class Login extends Component {
         <div className='form-section'>
           <div className='row justify-content-center'>
             <div className='col-xs-12 col-md-10 col-lg-8 col-xl-6'>
-              <form action='#' className='form'>
+              <form  onSubmit={this.onSubmit} className='form'>
                 <h3 className='text-center login-header'>Login</h3>
                 <div className='row'>
                   <div className='col-xs-12 col-md-6 col-lg-6'>
@@ -27,6 +29,7 @@ class Login extends Component {
                         Email address
                       </label>
                       <input
+                        id="email"
                         type='email'
                         className='form-control'
                         aria-describedby='emailHelp'
@@ -36,7 +39,11 @@ class Login extends Component {
                       <label className='label' for='exampleInputPassword1'>
                         Password
                       </label>
-                      <input type='password' className='form-control' />
+                      <input
+                        id="password" 
+                        type='password'
+                         className='form-control'
+                         />
                     </div>
                     <div className='form-group '>
                       <Link className='links' to='/signup'>
@@ -55,6 +62,18 @@ class Login extends Component {
       </Fragment>
     );
   }
+  onSubmit = (e) => {
+    e.preventDefault();
+    let email = $('#email').val();
+    let password = $('#password').val();
+    this.context.auth.signInWithEmailAndPassword(email, password).then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
 }
 
+Login.contextType = FirebaseContext
 export default Login;
