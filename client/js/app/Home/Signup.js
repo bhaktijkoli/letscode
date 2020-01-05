@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { withStore } from './../Store';
 import { withFirebase } from './../Firebase';
 
 class Signup extends Component {
@@ -8,6 +9,9 @@ class Signup extends Component {
     document.title = "Let's Code";
   }
   render() {
+    if(this.props.store.state.user != null) {
+      window.location.href = "/";
+    }
     return (
       <Fragment>
         <div className='form-section1'>
@@ -100,4 +104,4 @@ class Signup extends Component {
   }
 }
 
-export default withFirebase(Signup);
+export default withStore(withFirebase(Signup));

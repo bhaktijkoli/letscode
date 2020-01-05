@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { withStore } from './../Store';
 import { withFirebase } from './../Firebase';
 
 class Login extends Component {
@@ -8,14 +9,16 @@ class Login extends Component {
     document.title = "Let's Code";
   }
   render() {
-    console.log("RE RENDER");
+    if(this.props.store.state.user != null) {
+      window.location.href = "/";
+    }
     return (
       <Fragment>
         <div className='form-section'>
           <div className='row justify-content-center'>
             <div className='col-xs-12 col-md-10 col-lg-8 col-xl-6'>
               <form  onSubmit={this.onSubmit} className='form'>
-                <h3 className='text-center login-header'>Login</h3>
+                <h3 className='text-center login-header'>Login {this.props.store.state.count}</h3>
                 <div className='row'>
                   <div className='col-xs-12 col-md-6 col-lg-6'>
                     <img
@@ -76,4 +79,4 @@ class Login extends Component {
   }
 }
 
-export default withFirebase(Login);
+export default withStore(withFirebase(Login));

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import { withStore } from './../Store';
+
 class Home extends Component {
   componentDidMount() {
     document.title = "Let's Code";
@@ -9,12 +10,7 @@ class Home extends Component {
     return (
       <Fragment>
         <header className='header-section'>
-          <Link className='header-link header-link-1' to='/login'>
-            Login
-          </Link>
-          <Link className='header-link header-link-2' to='/signup'>
-            Signup
-          </Link>
+          {this.renderLinks()}
           <div className='header-textbox'>
             <h1 className='header-text'>&#60;Lets Code&#47;&#62;</h1>
             <p className='header-text-sub'>
@@ -188,6 +184,31 @@ class Home extends Component {
       </Fragment>
     );
   }
+  renderLinks = () => {
+    if(this.props.store.state.user) {
+      return(
+        <Fragment>
+          <p className="header-link header-link-1">Welcome,<br/> {this.props.store.state.user.email}</p>
+            <Link className='header-link header-link-2' to='/logout'>
+              Logout
+            </Link>
+        </Fragment>
+      )
+    }
+    return(
+      <Fragment>
+        <Link className='header-link header-link-1' to='/login'>
+          Login
+        </Link>
+        <Link className='header-link header-link-2' to='/signup'>
+          Signup
+        </Link>
+      </Fragment>
+    )
+  }
+  onClickLogout = () => {
+    alert("Hello")
+  }
 }
 
-export default Home;
+export default withStore(Home);

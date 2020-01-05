@@ -18,13 +18,6 @@ class Firebase {
     app.initializeApp(config);
     this.auth = app.auth();
     console.log("Firebase initialize");
-    this.user = null;
-    this.auth.onAuthStateChanged(function(user) {
-      console.log(user);
-      if (user) {
-        this.user = user;
-      }
-    });
   }
 }
 
