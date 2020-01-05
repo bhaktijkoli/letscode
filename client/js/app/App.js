@@ -15,6 +15,8 @@ class Guest extends Component {
       console.log(user);
       if (user) {
         this.props.store.dispatch({type: 'AUTH_SET_USER', payload: user});
+      } else {
+        this.authListener();
       }
     });
   }

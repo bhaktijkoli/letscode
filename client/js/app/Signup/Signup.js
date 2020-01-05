@@ -3,8 +3,12 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { withStore } from './../Store';
 import { withFirebase } from './../Firebase';
+import { If, Then, Else } from 'react-if';
 
 class Signup extends Component {
+  state = {
+    proccessing: false,
+  }
   componentDidMount() {
     document.title = "Let's Code";
   }
@@ -79,9 +83,16 @@ class Signup extends Component {
                         Already have an account?Log In
                       </Link>
                     </div>
-                    <button type='submit' className='btn-login'>
-                      Submit
-                    </button>
+                    <If condition={this.state.proccessing}>
+                      <Then>
+                        <p>Please wait...</p>
+                      </Then>
+                      <Else>
+                        <button type='submit' className='btn-login'>
+                          Submit
+                        </button>
+                      </Else>
+                    </If>
                   </div>
                 </div>
               </form>
@@ -93,13 +104,21 @@ class Signup extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
+    this.setState({proccessing: true});
     let email = $('#email').val();
     let password = $('#password').val();
-    this.props.Firebase.auth.createUserWithEmailAndPassword(email, password).then(res => {
-      console.log(res);
+    this.props.firebase.auth.createUserWithEmailAndPassword(email, password).then(res => {
+      res.user.updateProfile({displayName: name})
+      .then(() => {
+        alert("Registration Successfull");
+        window.location.href = "/";
+      })
     })
     .catch(err => {
-      console.log(err);
+      alert("Registration Failed");
+    })
+    .finally(() => {
+      this.setState({proccessing: false});
     })
   }
 }

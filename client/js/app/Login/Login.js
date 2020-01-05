@@ -3,8 +3,12 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { withStore } from './../Store';
 import { withFirebase } from './../Firebase';
+import { If, Then, Else } from 'react-if';
 
 class Login extends Component {
+  state = {
+    proccessing: false,
+  }
   componentDidMount() {
     document.title = "Let's Code";
   }
@@ -54,9 +58,16 @@ class Login extends Component {
                         Don't have an account?Signup
                       </Link>
                     </div>
-                    <button type='submit' className='btn-login'>
-                      Submit
-                    </button>
+                    <If condition={this.state.proccessing}>
+                      <Then>
+                        <p>Please wait...</p>
+                      </Then>
+                      <Else>
+                        <button type='submit' className='btn-login'>
+                          Login
+                        </button>
+                      </Else>
+                    </If>
                   </div>
                 </div>
               </form>
@@ -68,13 +79,19 @@ class Login extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
+    this.setState({proccessing: true});
     let email = $('#email').val();
     let password = $('#password').val();
     this.props.firebase.auth.signInWithEmailAndPassword(email, password).then(res => {
       console.log(res);
+      window.location.href = "/";
     })
     .catch(err => {
       console.log(err);
+      alert("Invalid email and password.");
+    })
+    .finally(() => {
+      this.setState({proccessing: false});
     })
   }
 }
