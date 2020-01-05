@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { FirebaseContext } from './../Firebase';
+import { withFirebase } from './../Firebase';
 
 class Signup extends Component {
   componentDidMount() {
     document.title = "Let's Code";
   }
   render() {
-    console.log(this.context);
     return (
       <Fragment>
         <div className='form-section1'>
@@ -92,7 +91,7 @@ class Signup extends Component {
     e.preventDefault();
     let email = $('#email').val();
     let password = $('#password').val();
-    this.context.auth.createUserWithEmailAndPassword(email, password).then(res => {
+    this.props.Firebase.auth.createUserWithEmailAndPassword(email, password).then(res => {
       console.log(res);
     })
     .catch(err => {
@@ -101,5 +100,4 @@ class Signup extends Component {
   }
 }
 
-Signup.contextType = FirebaseContext
-export default Signup;
+export default withFirebase(Signup);

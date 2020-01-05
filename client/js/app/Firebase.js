@@ -27,5 +27,12 @@ class Firebase {
     });
   }
 }
+
+const withFirebase = Component => props => (
+  <FirebaseContext.Consumer>
+    {firebase => <Component {...props} firebase={firebase} />}
+  </FirebaseContext.Consumer>
+);
+
 export default Firebase;
-export { FirebaseContext };
+export { FirebaseContext, withFirebase };

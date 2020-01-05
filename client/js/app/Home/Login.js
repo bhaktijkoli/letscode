@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { FirebaseContext } from './../Firebase';
+import { withFirebase } from './../Firebase';
 
 class Login extends Component {
   componentDidMount() {
     document.title = "Let's Code";
   }
   render() {
+    console.log("RE RENDER");
     return (
       <Fragment>
         <div className='form-section'>
@@ -40,7 +41,7 @@ class Login extends Component {
                         Password
                       </label>
                       <input
-                        id="password" 
+                        id="password"
                         type='password'
                          className='form-control'
                          />
@@ -66,7 +67,7 @@ class Login extends Component {
     e.preventDefault();
     let email = $('#email').val();
     let password = $('#password').val();
-    this.context.auth.signInWithEmailAndPassword(email, password).then(res => {
+    this.props.firebase.auth.signInWithEmailAndPassword(email, password).then(res => {
       console.log(res);
     })
     .catch(err => {
@@ -75,5 +76,4 @@ class Login extends Component {
   }
 }
 
-Login.contextType = FirebaseContext
-export default Login;
+export default withFirebase(Login);
