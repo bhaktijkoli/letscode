@@ -25,7 +25,7 @@ class Guest extends Component {
       <React.Fragment>
         <Route exact path='/' component={Home} />
         <Route exact path='/home' component={Home} />
-        <Route exact path='/editor' component={Editor} />
+        <Route exact path='/editor/:slug' component={Editor} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/logout' component={Logout} />

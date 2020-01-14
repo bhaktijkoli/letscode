@@ -11465,5 +11465,10 @@ body {
     margin-left: 50px;
   }
 }
+#editor-nav {
+  padding: 15px;
+  background-color: #2f3640;
+  width: 100%;
+}
 
 /*# sourceMappingURL=core.css.map */

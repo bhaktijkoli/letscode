@@ -36,7 +36,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/py'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/c'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/cplus'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/go'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/java'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/js'>Practice</Link>
                   </div>
                 </div>
               </div>
@@ -154,7 +154,7 @@ class Home extends Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quas cum cumque minus iste veritatis provident at.
                     </p>
-                    <Link to='/editor'>Practice</Link>
+                    <Link to='/editor/php'>Practice</Link>
                   </div>
                 </div>
               </div>

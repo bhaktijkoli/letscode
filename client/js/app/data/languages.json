@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Python",
+    "slug": "py"
+  },
+  {
+    "name": "C",
+    "slug": "c"
+  },
+  {
+    "name": "C++",
+    "slug": "cplus"
+  },
+  {
+    "name": "Go Lang",
+    "slug": "go"
+  },
+  {
+    "name": "Java",
+    "slug": "java"
+  },
+  {
+    "name": "JavaScript",
+    "slug": "js"
+  },
+  {
+    "name": "PhP",
+    "slug": "php"
+  },
+  {
+    "name": "Ruby",
+    "slug": "ruby"
+  }
+]
