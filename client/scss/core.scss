@@ -3,7 +3,34 @@
 @import "core/customCss";
 
 #editor-nav {
-  padding: 15px;
+  padding: 10px 25px;
   background-color: #2f3640;
   width: 100%;
+}
+
+.editor-title {
+  display: inline-block;
+}
+.editor-title h1 {
+  font-size: 1.5rem;
+  color: #FFF;
+  margin-bottom: 0px;
+}
+.editor-action {
+  display: inline-block;
+  float: right;
+}
+
+.ace-editor {
+  width: 100vw !important;
+  height: calc(100vh - 300px) !important;
+}
+
+.ace-output {
+  background: #000;
+  width: 100vw;
+  height: 250px;
+  padding: 20px;
+  overflow: scroll;
+  color: #FFF;
 }

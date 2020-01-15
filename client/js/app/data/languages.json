@@ -1,34 +1,42 @@
 [
   {
     "name": "Python",
-    "slug": "py"
+    "slug": "py",
+    "mode": "python"
   },
   {
     "name": "C",
-    "slug": "c"
+    "slug": "c",
+    "mode": "csharp"
   },
   {
     "name": "C++",
-    "slug": "cplus"
+    "slug": "cplus",
+    "mode": "csharp"
   },
   {
     "name": "Go Lang",
-    "slug": "go"
+    "slug": "go",
+    "mode": "golang"
   },
   {
     "name": "Java",
-    "slug": "java"
+    "slug": "java",
+    "mode": "java"
   },
   {
     "name": "JavaScript",
-    "slug": "js"
+    "slug": "js",
+    "mode": "javascript"
   },
   {
     "name": "PhP",
-    "slug": "php"
+    "slug": "php",
+    "mode": "markdown"
   },
   {
     "name": "Ruby",
-    "slug": "ruby"
+    "slug": "ruby",
+    "mode": "ruby"
   }
 ]
