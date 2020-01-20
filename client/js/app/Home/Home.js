@@ -185,30 +185,76 @@ class Home extends Component {
     );
   }
   renderLinks = () => {
-    if(this.props.store.state.user) {
-      return(
+    if (this.props.store.state.user) {
+      return (
         <Fragment>
-          <p className="header-link header-link-1">Welcome,<br/> {this.props.store.state.user.email}</p>
-            <Link className='header-link header-link-2' to='/logout'>
-              Logout
-            </Link>
+          <nav class='navbar navbar-expand-lg navbar-transparent'>
+            <button
+              class='navbar-toggler'
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbarTogglerDemo01'
+              aria-controls='navbarTogglerDemo01'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <span class='navbar-toggler-icon'>
+                <img src='https://img.icons8.com/metro/20/000000/menu.png' />
+              </span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarTogglerDemo01'>
+              <ul class='navbar-nav ml-auto mt-2 mt-lg-0'>
+                <li class='nav-item mr-3 mt-2' style={{ color: 'white' }}>
+                  Welcome, &nbsp; {this.props.store.state.user.email}
+                </li>
+                <li class='nav-item'>
+                  <Link className='nav-link btn btn-dark btn-sm' to='/logout'>
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </Fragment>
-      )
+      );
     }
-    return(
+    return (
       <Fragment>
-        <Link className='header-link header-link-1' to='/login'>
-          Login
-        </Link>
-        <Link className='header-link header-link-2' to='/signup'>
-          Signup
-        </Link>
+        <nav class='navbar navbar-expand-lg navbar-transparent'>
+          <button
+            class='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarTogglerDemo01'
+            aria-controls='navbarTogglerDemo01'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+          >
+            <span class='navbar-toggler-icon'>
+              <img src='https://img.icons8.com/metro/20/000000/menu.png' />
+            </span>
+          </button>
+          <div class='collapse navbar-collapse' id='navbarTogglerDemo01'>
+            <ul class='navbar-nav ml-auto mt-2 mt-lg-0'>
+              <li class='nav-item mr-3 mb-2'>
+                <Link className='nav-link btn btn-dark btn-sm' to='/login'>
+                  Login
+                </Link>
+              </li>
+              <li class='nav-item mr-3 mb-2'>
+                <Link className='nav-link btn btn-dark btn-sm' to='/signup'>
+                  Signup
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </Fragment>
-    )
-  }
+    );
+  };
   onClickLogout = () => {
-    alert("Hello")
-  }
+    alert('Hello');
+  };
 }
 
 export default withStore(Home);

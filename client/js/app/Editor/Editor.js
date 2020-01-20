@@ -38,19 +38,22 @@ class Editor extends Component {
               ref={fileInput => (this.fileInput = fileInput)}
             />
             <button
-              className='btn btn-success btn-sm'
+              className='btn btn-success btn-sm mr-2'
               onClick={() => this.fileInput.click()}
             >
               Pick File
             </button>
             <button
-              className='btn btn-success btn-sm'
+              className='btn btn-success btn-sm mr-2'
               onClick={this.fileUploadHandler}
             >
               Upload File
             </button>
-            <button className='btn btn-success btn-sm' onClick={this.onRun}>
-              RUN
+            <button
+              className='btn btn-success btn-sm mr-2'
+              onClick={this.onRun}
+            >
+              Run
             </button>
           </div>
         </div>
