@@ -36,23 +36,17 @@ class Editor extends Component {
               style={{ display: 'none' }}
               onChange={this.handleFile}
               ref={fileInput => (this.fileInput = fileInput)}
-            />
+              />
             <button
               className='btn btn-success btn-sm mr-2'
               onClick={() => this.fileInput.click()}
-            >
-              Pick File
-            </button>
-            <button
-              className='btn btn-success btn-sm mr-2'
-              onClick={this.fileUploadHandler}
-            >
+              >
               Upload File
             </button>
             <button
               className='btn btn-success btn-sm mr-2'
               onClick={this.onRun}
-            >
+              >
               Run
             </button>
           </div>
@@ -75,26 +69,39 @@ class Editor extends Component {
             showLineNumbers: true,
             tabSize: 2
           }}
-        />
+          />
         <div className='ace-output'></div>
       </React.Fragment>
     );
   }
 
   handleFile = e => {
-    this.setState({
-      selectedFile: e.target.files[0].name
-    });
-  };
+    var input = e.target;
+    var reader = new FileReader();
+    reader.onload = () => {
+      var code = reader.result;
+      this.setState({code});
+    };
+    reader.readAsText(input.files[0]);
+  }
 
-  fileUploadHandler = () => {
-    const fd = new FormData();
+  readTextFile = (file) => {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+      if(rawFile.readyState === 4)
+      {
+        if(rawFile.status === 200 || rawFile.status == 0)
+        {
+          var allText = rawFile.responseText;
+          alert(allText);
+        }
+      }
+    }
+    rawFile.send(null);
+  }
 
-    fd.append('file', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('', fd).then(res => {
-      console.log(res);
-    });
-  };
   onRun = () => {
     let data = {
       content: this.state.code,
@@ -103,7 +110,7 @@ class Editor extends Component {
     axios.post('https://compiler.bhaktijkoli.com/compile', data).then(res => {
       $('.ace-output').append(`<p>${res.data.output}</p>`);
     });
-  };
+  }
 }
 
 export default Editor;
