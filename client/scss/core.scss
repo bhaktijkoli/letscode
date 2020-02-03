@@ -34,3 +34,17 @@
   overflow: scroll;
   color: #FFF;
 }
+
+#file-browser {
+  background-color: #EEE;
+  .file-browser-inner {
+    padding: 15px;
+  }
+  .file-browser-empty {
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}

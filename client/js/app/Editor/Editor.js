@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import AceEditor from 'react-ace';
+import { withFirebase } from './../Firebase';
+import { withStore } from './../Store';
 
 import languages from './../data/languages.json';
 
 import 'ace-builds/src-min-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/theme-monokai';
+
+import Browser from './Browser';
 
 class Editor extends Component {
   constructor(props) {
@@ -22,6 +26,7 @@ class Editor extends Component {
     document.title = `${lang.name} Editor`;
   }
   render() {
+    console.log("Props", this.props);
     return (
       <React.Fragment>
         <div id='editor-nav'>
@@ -51,26 +56,33 @@ class Editor extends Component {
             </button>
           </div>
         </div>
-        <AceEditor
-          mode={this.state.lang.mode}
-          theme='monokai'
-          onLoad={this.onLoad}
-          onChange={code => this.setState({ code })}
-          fontSize={14}
-          showPrintMargin={true}
-          showGutter={true}
-          highlightActiveLine={true}
-          value={this.state.code}
-          className='ace-editor'
-          setOptions={{
-            enableBasicAutocompletion: false,
-            enableLiveAutocompletion: false,
-            enableSnippets: false,
-            showLineNumbers: true,
-            tabSize: 2
-          }}
-          />
-        <div className='ace-output'></div>
+        <div className="row">
+          <div id="file-browser" className="col-sm-3 no-padding">
+            <Browser firebase={this.props.firebase} store={this.props.store}/>
+          </div>
+          <div className="col-sm-9">
+            <AceEditor
+              mode={this.state.lang.mode}
+              theme='monokai'
+              onLoad={this.onLoad}
+              onChange={code => this.setState({ code })}
+              fontSize={14}
+              showPrintMargin={true}
+              showGutter={true}
+              highlightActiveLine={true}
+              value={this.state.code}
+              className='ace-editor'
+              setOptions={{
+                enableBasicAutocompletion: false,
+                enableLiveAutocompletion: false,
+                enableSnippets: false,
+                showLineNumbers: true,
+                tabSize: 2
+              }}
+              />
+            <div className='ace-output'></div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
@@ -113,4 +125,4 @@ class Editor extends Component {
   }
 }
 
-export default Editor;
+export default withStore(withFirebase(Editor));

@@ -11500,4 +11500,18 @@ body {
   color: #FFF;
 }
 
+#file-browser {
+  background-color: #EEE;
+}
+#file-browser .file-browser-inner {
+  padding: 15px;
+}
+#file-browser .file-browser-empty {
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=core.css.map */
