@@ -1,6 +1,7 @@
 import React from 'react';
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 const FirebaseContext = React.createContext(null);
 
@@ -17,6 +18,7 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
     this.auth = app.auth();
+    this.firestore = app.firestore();
     console.log("Firebase initialize");
   }
 }

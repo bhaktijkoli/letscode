@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 @import "core/bootstrap";
 @import "core/customCss";
+@import "core/sweetalert2";
 
 #editor-nav {
   padding: 10px 25px;
@@ -46,5 +47,8 @@
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+  .file {
+    cursor: pointer;
   }
 }

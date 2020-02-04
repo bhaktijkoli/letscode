@@ -26,7 +26,6 @@ class Editor extends Component {
     document.title = `${lang.name} Editor`;
   }
   render() {
-    console.log("Props", this.props);
     return (
       <React.Fragment>
         <div id='editor-nav'>
@@ -53,6 +52,12 @@ class Editor extends Component {
               onClick={this.onRun}
               >
               Run
+            </button>
+            <button
+              className="btn btn-primary btn-sm mr-2"
+              onClick={this.onClicKSave}
+              >
+              Save
             </button>
           </div>
         </div>
@@ -122,6 +127,21 @@ class Editor extends Component {
     axios.post('https://compiler.bhaktijkoli.com/compile', data).then(res => {
       $('.ace-output').append(`<p>${res.data.output}</p>`);
     });
+  }
+
+  onClicKSave = () => {
+    Swal.fire({
+      title: 'Enter filename',
+      input: 'text',
+      confirmButtonText: "Save",
+    }).then(res => {
+      let data = {
+        file: res.value, code: this.state.code, lang: this.state.lang.slug
+      };
+      let user = this.props.store.state.user;
+      let firestore = this.props.firebase.firestore;
+      firestore.collection(user.uid).add(data);
+    })
   }
 }
 
