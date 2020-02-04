@@ -63,7 +63,7 @@ class Editor extends Component {
         </div>
         <div className="row">
           <div id="file-browser" className="col-sm-3 no-padding">
-            <Browser firebase={this.props.firebase} store={this.props.store}/>
+            <Browser firebase={this.props.firebase} store={this.props.store} changeFile={this.changeFile}/>
           </div>
           <div className="col-sm-9">
             <AceEditor
@@ -136,11 +136,18 @@ class Editor extends Component {
       confirmButtonText: "Save",
     }).then(res => {
       let data = {
-        file: res.value, code: this.state.code, lang: this.state.lang.slug
+        file: res.value, code: this.state.code, lang: this.state.lang
       };
       let user = this.props.store.state.user;
       let firestore = this.props.firebase.firestore;
       firestore.collection(user.uid).add(data);
+    })
+  }
+
+  changeFile = (file) => {
+    this.setState({
+      code: file.code,
+      lang: file.lang,
     })
   }
 }

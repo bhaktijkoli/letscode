@@ -20,7 +20,7 @@ class Browser extends Component {
         {
           this.state.files.map((file, index) => {
             return(
-              <div className="file" key={index}>
+              <div className="file" key={index} onClick={e=>this.onSelectFile(file)}>
                 <p className="file-name">{file.file}</p>
               </div>
             )
@@ -44,8 +44,8 @@ class Browser extends Component {
       });
     }
   }
-  componentDidMount() {
-
+  onSelectFile = (file) => {
+    this.props.changeFile(file)
   }
 }
 
