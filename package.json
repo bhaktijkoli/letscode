@@ -44,7 +44,7 @@
     "react-router-dom": "^5.1.2",
     "sweetalert2": "^9.7.1",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-notifier": "^1.8.0"
   }
 }
